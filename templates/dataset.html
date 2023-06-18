@@ -1,0 +1,46 @@
+{% extends '_base.html' %}
+{% block content %}
+<div class="post d-flex flex-column-fluid" id="kt_post">
+	<div id="kt_content_container" class="container-xxl">
+        <div class="card card-flush mt-6 mt-xl-9">
+            <div class="card-header mt-5">
+                <div class="card-title flex-column">
+                    <h3 class="fw-bolder mb-1">Dataset BWD</h3>
+                </div>
+            </div>
+            <div class="card-body pt-0">
+                <div class="table-responsive">
+                    <table id="kt_profile_overview_table" class="table table-row-bordered table-row-dashed gy-4 align-middle fw-bolder">
+                        <thead class="fs-7 text-gray-400 text-uppercase">
+                            <tr>
+                                <th class="min-w-250px"><center>File Dataset</center></th>
+                                <th class="min-w-150px"><center>Kelas Label</center></th>
+                            </tr>
+                        </thead>
+                        <tbody class="fs-6">
+                            {% for image_file in image_files %}
+                            <tr>
+                                <td>
+                                    <div class="d-flex align-items-center px-10">
+                                        <div class="me-5 position-relative">
+                                            <div class="symbol symbol-100px symbol-circle">
+                                                <img alt="Pic" src="../static/dataset/{{ image_file['image_file'] }}" />
+                                            </div>
+                                        </div>
+                                        <div class="d-flex flex-column justify-content-center">
+                                            <a href="" class="fs-6 text-gray-800 text-hover-primary">File Name: {{ image_file['image_file'].split("/",1)[1] }}</a>
+                                            <div class="fw-bold text-gray-400">Lokasi File: {{ image_file['image_file'] }}</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td><center>{{ image_file['label'] }}</center></td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+	</div>
+</div>
+{% endblock %}

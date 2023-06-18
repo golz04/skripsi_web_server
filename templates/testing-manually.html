@@ -1,0 +1,90 @@
+{% extends '_base.html' %}
+{% block content %}
+<div class="post d-flex flex-column-fluid" id="kt_post">
+	<div id="kt_content_container" class="container-xxl">
+        <div class="card mb-5 mb-xl-10">
+            <div class="card-header border-0 cursor-pointer" role="button" data-bs-toggle="collapse" data-bs-target="#kt_account_profile_details" aria-expanded="true" aria-controls="kt_account_profile_details">
+                <div class="card-title m-0">
+                    <h3 class="fw-bolder m-0">Pengujian Label Manual</h3>
+                </div>
+            </div>
+            <div id="kt_account_settings_profile_details" class="collapse show">
+                <form id="kt_account_profile_details_form" class="form" enctype="multipart/form-data" action="/testing-manually/" method="POST">
+                    <div class="card-body border-top p-9">
+                        <div class="row mb-6">
+                            <label class="col-lg-4 col-form-label required fw-bold fs-6">Citra Gambar</label>
+                            <div class="col-lg-8 fv-row">
+                                <input type="file" name="image" class="form-control form-control-lg form-control-solid" required/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer d-flex justify-content-end py-6 px-9">
+                        <button type="reset" class="btn btn-light btn-active-light-primary me-2">Reset</button>
+                        <button type="submit" class="btn btn-primary" id="kt_account_profile_details_submit">Proses Gambar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="card mb-5 mb-xl-10">
+            <div class="card-header border-0 cursor-pointer" role="button" data-bs-toggle="collapse" data-bs-target="#kt_account_profile_details" aria-expanded="true" aria-controls="kt_account_profile_details">
+                <div class="card-title m-0">
+                    <h3 class="fw-bolder m-0">Hasil</h3>
+                </div>
+            </div>
+            <div id="kt_account_settings_profile_details" class="collapse show">
+                <div class="row p-0 mb-5 px-9">
+                    <div class="col">
+                        <div class="border border-dashed border-gray-300 text-center min-w-125px rounded pt-4 pb-2 my-3">
+                            <span class="fs-4 fw-bold text-danger d-block mb-2">Gambar Daun Padi</span>
+                            <div class="symbol symbol-100px symbol-lg-160px symbol-fixed position-relative">
+                                <img src="/static/upload/{{displayImageName}}" alt="image" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="border border-dashed border-gray-300 text-center min-w-125px rounded pt-4 pb-12 my-3">
+                            <span class="fs-4 fw-bold text-success d-block">Label</span>
+                            <div class="mx-20 mt-8">
+                                <div class="form-check form-check-sm form-check-custom form-check-solid mt-3">
+                                    <input class="form-check-input" {{ 'checked' if displaylabel=='2' else '' }} type="checkbox" disabled/> &nbsp; Kategori Label 2 
+                                </div>
+                                <div class="form-check form-check-sm form-check-custom form-check-solid mt-3">
+                                    <input class="form-check-input" {{ 'checked' if displaylabel=='3' else '' }} type="checkbox" disabled/> &nbsp; Kategori Label 3
+                                </div>
+                                <div class="form-check form-check-sm form-check-custom form-check-solid mt-3">
+                                    <input class="form-check-input" {{ 'checked' if displaylabel=='4' else '' }} type="checkbox" disabled/> &nbsp; Kategori Label 4
+                                </div>
+                                <div class="form-check form-check-sm form-check-custom form-check-solid mt-3">
+                                    <input class="form-check-input" {{ 'checked' if displaylabel=='5' else '' }} type="checkbox" disabled/> &nbsp; Kategori Label 5
+                                </div>
+                            </div>
+                            <!-- <span class="fs-2hx fw-bolder text-gray-900">{{ displaylabel }}</span> -->
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="border border-dashed border-gray-300 text-center min-w-125px rounded pt-4 pb-12 my-3">
+                            <span class="fs-4 fw-bold text-primary d-block">Rekomendasi Takaran Pupuk Urea</span>
+                            <div class="mx-20 mt-8">
+                                <div class="form-check form-check-sm form-check-custom form-check-solid mt-3">
+                                    <input class="form-check-input" {{ 'checked' if displaylabel=='2' else '' }} type="checkbox" disabled/> &nbsp; 175kg/ha 
+                                </div>
+                                <div class="form-check form-check-sm form-check-custom form-check-solid mt-3">
+                                    <input class="form-check-input" {{ 'checked' if displaylabel=='3' else '' }} type="checkbox" disabled/> &nbsp; 150kg/ha
+                                </div>
+                                <div class="form-check form-check-sm form-check-custom form-check-solid mt-3">
+                                    <input class="form-check-input" {{ 'checked' if displaylabel=='4' else '' }} type="checkbox" disabled/> &nbsp; 125kg/ha
+                                </div>
+                                <div class="form-check form-check-sm form-check-custom form-check-solid mt-3">
+                                    <input class="form-check-input" {{ 'checked' if displaylabel=='5' else '' }} type="checkbox" disabled/> &nbsp; 100kg/ha
+                                </div>
+                            </div>
+                            <!-- <span class="fs-2hx fw-bolder text-gray-900">{{ displayReccomendation }}</span> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+	</div>
+</div>
+{% endblock %}

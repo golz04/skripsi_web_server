@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Web Server Skripsi</title>
+		<meta charset="utf-8" />
+		<meta name="description" content="none" />
+		<meta name="keywords" content="None, none, NoNe" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+        {% include 'components/in-head.html' %}
+	</head>
+	<body id="kt_body" class="header-fixed header-tablet-and-mobile-fixed toolbar-enabled toolbar-fixed aside-enabled aside-fixed" style="--kt-toolbar-height:55px;--kt-toolbar-height-tablet-and-mobile:55px">
+		<div class="d-flex flex-column flex-root">
+			<div class="page d-flex flex-row flex-column-fluid">
+				{% include 'components/sidebar.html' %}
+                
+				<div class="wrapper d-flex flex-column flex-row-fluid" id="kt_wrapper">
+					{% include 'components/topbar.html' %}
+
+					<div class="content d-flex flex-column flex-column-fluid" id="kt_content">
+						<div class="toolbar" id="kt_toolbar">
+							<div id="kt_toolbar_container" class="container-fluid d-flex flex-stack">
+								<div data-kt-swapper="true" data-kt-swapper-mode="prepend" data-kt-swapper-parent="{default: '#kt_content_container', 'lg': '#kt_toolbar_container'}" class="page-title d-flex align-items-center flex-wrap me-3 mb-5 mb-lg-0">
+									<h1 class="d-flex text-dark fw-bolder fs-3 align-items-center my-1">Muhammad Haidar
+                                        <span class="h-20px border-1 border-gray-200 border-start ms-3 mx-2 me-1"></span>
+                                        <span class="text-muted fs-7 fw-bold mt-2">192410103002</span>
+									</h1>
+								</div>
+							</div>
+						</div>
+
+                        {% block content %}{% endblock %}
+					</div>					
+					{% include 'components/footer.html' %}
+				</div>
+			</div>
+		</div>
+		{% include 'components/scroll-top.html' %}
+        {% include 'components/in-body.html' %}
+	</body>
+</html>
