@@ -17,7 +17,7 @@ UPLOAD_FOLDER = 'static/upload'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 # all process
-dataset_dir = "static/dataset"
+dataset_dir = "static/dataset_ujicoba"
 image_files = []
 labels = []
 
@@ -94,10 +94,10 @@ knn_model_custom = {
 with open("static/save_model/knn_model.pkl", "wb") as f:
     pickle.dump(knn_model_custom, f)
 
-dir_path = "static/save_model/"
-os.makedirs(dir_path, exist_ok=True)
-file_path = os.path.join(dir_path, "knn_model.h5")
-joblib.dump(knn, file_path)
+# dir_path = "static/save_model/"
+# os.makedirs(dir_path, exist_ok=True)
+# file_path = os.path.join(dir_path, "knn_model.h5")
+# joblib.dump(knn, file_path)
 
 y_pred = knn.predict(X_test)
 
@@ -315,6 +315,9 @@ def apiTestingManually():
 
 if __name__ == '__main__':
     # app.run(debug=True) #server local
-    app.run(debug=True, host='192.168.76.57') #server hotspot HP
+    # app.run(debug=True, host='192.168.76.57') #server hotspot HP
     # app.run(debug=True, host='192.168.18.209') #server tobel
     # app.run(debug=True, host='192.168.18.209') #server was
+    # app.run(debug=True, host='192.168.1.5') #server rumah
+    # app.run(debug=True, host='192.168.1.24') #server kontrakan
+    app.run(debug=True)
